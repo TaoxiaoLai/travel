@@ -15,4 +15,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.iconfanhui:before {
+  content: "\e624";
+}
+
+.iconjiantouxia:before {
+  content: "\e62d";
+}
+
+.iconsousuo:before {
+  content: "\e632";
+}
 
