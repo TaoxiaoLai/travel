@@ -23,15 +23,15 @@ name : 'HomeHeader'
 <style lang="stylus" scoped>
 .header
     display: flex
-    line-height: .84rem
+    line-height: .90rem
     background: #00bcd4
     color: #fff
     .header-left
       width: .64rem
       float: left
       .icon-back
-        width: .50rem
-        height: .50rem
+        width: .60rem
+        height: .60rem
         text-align: center
         font-size: .4rem
     .header-input
