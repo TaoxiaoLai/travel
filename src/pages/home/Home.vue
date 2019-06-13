@@ -12,9 +12,6 @@ export default {
 		HomeHeader
 	}
 }
-
-
-{}
 </script>
 
 <style></style>
