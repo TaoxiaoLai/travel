@@ -1,8 +1,8 @@
 <template>
     <div class="icons">
-        <swiper>
-            <swiper-slide v-for="(page, index) of pages" :key="index">
-                <div class="icon" v-for="item of page" :key="item.id">
+        <swiper :options="swiperOption">
+            <swiper-slide v-for="(icons, page) of pages" :key="page">
+                <div class="icon" v-for="item of icons" :key="item.id">
                     <div class="icon-img">
                         <img class="img" :src='item.imgUrl' />
                     </div>
@@ -18,6 +18,9 @@ export default {
     name: 'HomeIcons',
     data () {
         return {
+            swiperOption: {
+                autoplay: false
+            },
             iconList: [
                 {
                     id: '001',
@@ -68,11 +71,11 @@ export default {
         }
     },
     computed: {
-        pages () {
+        pages () {  
             const pages = []
             this.iconList.forEach((item,index) => {
-                const page = Math.floor(index/8)
-                if(!pages[page]){
+                const page = Math.floor( index/8 )
+                if(!pages[page]){       //这个判断要不要都行，就是确保pages[]里面是空的
                     pages[page] = []
                 }
                 pages[page].push(item)

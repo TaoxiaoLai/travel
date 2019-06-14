@@ -16,7 +16,8 @@ export default {
         return {
             swiperOption: {
                 pagination: '.swiper-pagination',       //通过这个显示下面轮播的小点
-                loop: true
+                loop: true,
+                autoplay: 3000
             },
             imgList: [
                 {                     
@@ -46,6 +47,7 @@ export default {
     height: 0
     padding-bottom: 54.488%
     background: #eeeeee
+    margin-bottom: .2rem
     .swiper-img
         width: 100%
 </style>
