@@ -20,55 +20,11 @@ export default {
         return {
             swiperOption: {
                 autoplay: false
-            },
-            iconList: [
-                {
-                    id: '001',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/8B/8E/Cii-T1fuHgqIbV1HAAAGO81OjDUAAC57AP_-acAAAZZ433.png',
-                    desc: '热门景点'
-                },{
-                    id: '002',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/59/72/Cii-T1fM1fSIf608AAARsQcj6XAAACDvAP_7PUAABHJ478.png',
-                    desc: '出境游'
-                },
-                 {
-                    id: '003',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/59/73/Cii-TlfM1fSILR6tAAAN7rFnmEIAACDvQP1yEgAAA4G919.png',
-                    desc: '一日游'
-                },{
-                    id: '004',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/59/73/Cii-TlfM1feIO4NtAAANXZtSasUAACDvQP3KJwAAA11506.png',
-                    desc: '跟团游'
-                },
-                 {
-                    id: '005',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/59/73/Cii-TlfM1fWId8pmAAAPgnq7CXYAACDvQP2cuYAAA-a853.png',
-                    desc: '火车票'
-                },{
-                    id: '006',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/59/73/Cii-T1fM1feIQaPwAAAOxRfNfDUAACDvQP3eIMAAA7d173.png',
-                    desc: '渡轮游'
-                },
-                 {
-                    id: '007',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/59/6D/Cii-TFfM1fiIC4QPAAAL3IKBvskAACDtAP_88UAAAw7658.png',
-                    desc: '热门酒店'
-                },{
-                    id: '008',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/59/73/Cii-T1fM1faIXvvxAAAN_4O8GF0AACDvQP24DwAAA4X706.png',
-                    desc: '攻略'
-                },
-                 {
-                    id: '009',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/59/73/Cii-T1fM1fWIc1fpAAANQfAWPYAAACDvQP2VKMAAA1Z827.png',
-                    desc: '超级巴士'
-                },{
-                    id: '010',
-                    imgUrl: 'https://m.tuniucdn.com/fb2/t1/G2/M00/59/73/Cii-TFfM1faICPe-AAAOq5_xazwAACDvQP2s_UAAA7D296.png',
-                    desc: '租车·接送'
-                }
-            ]
+            }
         }
+    },
+    props: {
+        iconList: Array
     },
     computed: {
         pages () {  

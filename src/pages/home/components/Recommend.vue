@@ -17,32 +17,8 @@
 <script>
 export default {
     name: 'HomeRecommend',
-    data () {
-        return {
-            recommendList: [
-                {
-                    id: '001',
-                    imgUrl: 'https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg',
-                    title: '北京-丽江6天跟团游',
-                    desc: '含往返机票+5晚住宿'
-                },{
-                    id: '002',
-                    imgUrl: 'https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg',
-                    title: '北京-丽江6天跟团游',
-                    desc: '含往返机票+5晚住宿'
-                },{
-                    id: '003',
-                    imgUrl: 'https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg',
-                    title: '北京-丽江6天跟团游',
-                    desc: '含往返机票+5晚住宿'
-                },{
-                    id: '004',
-                    imgUrl: 'https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_256x160_9fee6ccb.jpg',
-                    title: '北京-丽江6天跟团游',
-                    desc: '含往返机票+5晚住宿'
-                }
-            ]
-        }
+    props: {
+        recommendList: Array
     }
 }
 </script>
