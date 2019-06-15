@@ -7,10 +7,12 @@
       <img src="@/assets/icon/search.png" class="icon-search">
 			输入城市/景点/游玩主题
 		</div>
-		<div class="header-right">
-			{{this.city}}
-      <img src="@/assets/icon/arrow_down.png" class="icon-down">
-		</div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{this.city}}
+        <img src="@/assets/icon/arrow_down.png" class="icon-down">
+      </div>
+    </router-link>
 	</div>
 </template>
 
