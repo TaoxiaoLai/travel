@@ -2,12 +2,13 @@
     <div>
         <city-header></city-header>
         <city-search></city-search>
-        <city-list></city-list>
-        <city-alphabet></city-alphabet>
+        <city-list :hotCities='hotCities' :cities='cities' :letter='letter'></city-list>
+        <city-alphabet :cities='cities' @change="handleLetterChange"></city-alphabet>
     </div>
 </template>
 
 <script>
+import axios from 'axios'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
@@ -19,6 +20,34 @@ export default {
         CitySearch,
         CityList,
         CityAlphabet
+    },
+    data () {
+        return {
+            hotCities: [],
+            cities: {},
+            letter: ''
+        }
+    },
+    methods: {
+        getCityInfo () {
+            axios.get('/api/city.json')
+                .then(this.getCityInfoSucc)
+        },
+        getCityInfoSucc (res) {
+            console.log(res)
+            const cityData = res.data   //更好的写法是res = res.data 因为这么写res不用再定义
+            if(cityData.ret && cityData.data){
+                const datas = cityData.data
+                this.hotCities = datas.hotCities
+                this.cities = datas.cities
+            }
+        },
+        handleLetterChange (letter) {
+            this.letter = letter
+        }
+    },
+    mounted () {
+       this.getCityInfo()
     }
 }
 </script>

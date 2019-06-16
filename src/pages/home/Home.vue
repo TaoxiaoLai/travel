@@ -39,10 +39,10 @@ export default {
 				.then(this.getHomeInfoSucc)
 		},
 		getHomeInfoSucc (res) {
-			console.log(res)
-			res = res.data
-			if(res.ret && res.data) {
-				const data = res.data
+			console.log(res)	//此时返回的res并非就是直接可以用的data数据了，还包括其他别的内容，其res下面的data才是可以直接用的数据
+			//res = res.data 如果不写这句，需要下面这么写才能找到数据（可看console.log打印出来的数据结构）
+			if(res.data.ret && res.data.data) {
+				const data = res.data.data
 				this.city = data.city
 				this.swiperList = data.swiperList
 				this.iconList = data.iconList

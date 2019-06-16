@@ -6,67 +6,27 @@
                 <div class="button-list">
                     <div class="button-wrapper">
                         <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
                     </div>
                 </div>
             </div>
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper">
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
-                        <div class="button">北京</div>
+                    <div class="button-wrapper" v-for="item of hotCities" :key="item.id">
+                        <div class="button">{{item.name}}</div>
                     </div>
                 </div>
             </div>
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        北京
-                    </div>
-                    <div class="item border-bottom">
-                        北京
-                    </div>
-                    <div class="item border-bottom">
-                        北京
-                    </div>
-                    <div class="item border-bottom">
-                        北京
-                    </div>
-                    <div class="item border-bottom">
-                        北京
-                    </div>
-                    <div class="item border-bottom">
-                        北京
-                    </div>
-                    <div class="item border-bottom">
-                        北京
-                    </div>
-                    <div class="item border-bottom">
-                        北京
-                    </div>
-                    <div class="item border-bottom">
-                        北京
-                    </div>
-                    <div class="item border-bottom">
-                        北京
+            <div class="area" 
+                 v-for="(item, key) of cities" 
+                 :key="key" 
+                 :ref="key">
+                <div class="title border-topbottom">{{key}}</div>
+                <div class="item-list" >
+                    <div class="item border-bottom"
+                         v-for="innerItem of item" 
+                         :key="innerItem.id">
+                        {{innerItem.name}}
                     </div>
                 </div>
             </div>
@@ -75,12 +35,35 @@
 </template>
 
 <script>
-//import Bscroll from 'better-scroll'  //安装完better-scroll之后要将其引入
+import Bscroll from 'better-scroll'  //安装完better-scroll之后要将其引入
 export default {
-    name: 'CityList'
-    /*mounted () {    //生命周期钩子函数，其会在页面dom结构加载完成之后生成一个scroll对象，这样就能使用Bsroll了
-        this.scroll = new Bscroll(this.$refs.wrapper)
-    }*/
+    name: 'CityList',
+    mounted () {    //生命周期钩子函数，会在页面dom结构加载完触发
+        this.scroll = new Bscroll(this.$refs.wrapper)   //其会在页面dom结构加载完成之后生成一个scroll对象，这样就能使用Bsroll了
+    },
+    props: {
+        hotCities: Array,
+        cities: Object,
+        letter: String
+    },
+    watch: {
+        letter () {
+            //console.log(this.letter)
+            if (this.letter) {
+                const element = this.$refs[this.letter]     //这样通过ref方法的到的是一个数组，里面存储了指定位置的dom结构
+                //console.log(element)
+                this.scroll.scrollToElement(element[0])     //better-scroll提供的方法，能滚动到指定的element元素，注意其传入的值必须是element
+            }
+
+        }
+        /* 简便的写法
+        letter () {
+            if(this.letter) {
+                const element = this.$refs[this.letter][0]
+                this.scrollToElement(element)
+            }
+        }*/
+    }
 }
 </script>
 
@@ -94,6 +77,7 @@ export default {
         &:before
             border-bottom: #cccccc
     .list
+        overflow: hidden    
         position: absolute 
         top: 1.62rem
         left: 0
