@@ -25,5 +25,15 @@ npm run build --report
 ```
 
 ##预览图
+![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/home-index1.png)
+![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/home-index2.png)
+![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/city.png)
+![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/city-search1.png)
+![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/spell-search.png)
+![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/name-search.png)
+![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/city-change.png)
+
+
+
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
