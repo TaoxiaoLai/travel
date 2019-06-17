@@ -5,7 +5,7 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">北京</div>
+                        <div class="button" style="border: .02rem solid #00bcd4">{{this.$store.state.city}}</div>
                     </div>
                 </div>
             </div>
@@ -13,7 +13,7 @@
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
                     <div class="button-wrapper" v-for="item of hotCities" :key="item.id">
-                        <div class="button">{{item.name}}</div>
+                        <div class="button" @click="handleandleCityClick(item.name)">{{item.name}}</div>
                     </div>
                 </div>
             </div>
@@ -23,9 +23,12 @@
                  :ref="key">
                 <div class="title border-topbottom">{{key}}</div>
                 <div class="item-list" >
-                    <div class="item border-bottom"
-                         v-for="innerItem of item" 
-                         :key="innerItem.id">
+                    <div 
+                        class="item border-bottom"
+                        v-for="innerItem of item" 
+                        :key="innerItem.id"
+                        @click="handleandleCityClick(innerItem.name)"
+                    >
                         {{innerItem.name}}
                     </div>
                 </div>
@@ -63,6 +66,13 @@ export default {
                 this.scrollToElement(element)
             }
         }*/
+    },
+    methods: {
+        handleandleCityClick (city) {
+            this.$store.dispatch('changeCity',city)     //调用vuex里面的dispatch方法，通过这个方法来调用actions，之后在actions里面用commit方法调用mutations，
+                                                        //在mutations里面更改state里面的公用数据，由于此处数据处理十分简单，也可以直接在这里使用commit方法调用mutations，见searc.vue里面的写法
+            this.$router.push('/')      //跳转到首页
+        }
     }
 }
 </script>
