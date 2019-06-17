@@ -1,6 +1,12 @@
 # travel
 
 > A Vue.js project
+  使用vue全家桶仿写去哪儿网
+
+##技术栈
+1.Vue全家桶（vue，vue-router，vuex）
+2.axios
+3.better-swiper
 
 ## Build Setup
 
@@ -17,5 +23,7 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+
+##预览图
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
