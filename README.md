@@ -4,9 +4,9 @@
   使用vue全家桶仿写去哪儿网
 
 ##技术栈
-1.Vue全家桶（vue，vue-router，vuex）
-2.axios
-3.better-swiper
+1. Vue全家桶（vue，vue-router，vuex）
+2. axios
+3. better-swiper
 
 ## Build Setup
 
@@ -25,13 +25,20 @@ npm run build --report
 ```
 
 ##预览图
-![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/home-index1.png)
-![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/home-index2.png)
-![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/city.png)
-![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/city-search1.png)
-![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/spell-search.png)
-![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/name-search.png)
-![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/city-change.png)
+
+ ![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/home-index1.png)
+
+ ![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/home-index2.png)
+
+ ![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/city.png)
+
+ ![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/city-search1.png)
+
+ ![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/spell-search.png)
+
+ ![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/name-search.png)
+
+ ![2](https://github.com/TaoxiaoLai/travel/blob/master/screenshot/city-change.png)
 
 
 
