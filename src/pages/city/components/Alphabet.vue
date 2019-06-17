@@ -23,8 +23,13 @@ export default {
     },
     data () {
         return {
-            touchStatus: false
+            touchStatus: false,
+            startY: 0,
+            timer: null
         }
+    },
+    updata () {
+        this.startY = this.$refs['A'][0].offsetTop
     },
     computed: {
         letters () {
@@ -43,13 +48,20 @@ export default {
             this.touchStatus = true
         },
         handleTouchMove (e) {
-            //console.log(e)
-            const startY = this.$refs['A'][0].offsetTop    //计算出了从A至搜索框底端的距离 
-            //console.log(e.touches)
-            const touchY = e.touches[0].clientY - 81       //计算出了当前触摸元素到搜索框底部的距离 
-            const index = Math.floor((touchY - startY) / 20)    //计算出是第几个字母
-            if(index >= 0 && index < this.letters.length){
-                this.$emit('change', this.letters[index])
+            if (this.touchStatus) {
+                if (this.timer) {
+                    clearTimeout(this.timer)
+                }
+                this.timer = setTimeout(() => {     //做一个截流，使得handleTouchMove函数的执行频率没那么高
+                    //console.log(e)
+                    //const startY = this.$refs['A'][0].offsetTop    //计算出了从A至搜索框底端的距离，因为这个值是不变的，所以拿到外面算，提高性能
+                    //console.log(e.touches)
+                    const touchY = e.touches[0].clientY - 81       //计算出了当前触摸元素到搜索框底部的距离 
+                    const index = Math.floor((touchY - this.startY) / 20)    //计算出是第几个字母
+                    if(index >= 0 && index < this.letters.length){
+                        this.$emit('change', this.letters[index])
+                    }
+                },16)
             }
         },
         handleTouchEnd () {
