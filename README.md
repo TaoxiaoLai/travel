@@ -6,7 +6,8 @@
 ## 技术栈
 1. Vue全家桶（vue，vue-router，vuex）
 2. axios
-3. better-swiper
+3. better-scroll
+4. VueAwesomeSwiper
 
 ## Build Setup
 
